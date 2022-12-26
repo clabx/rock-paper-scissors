@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RockPaperScissors</title>
+</head>
+<body>
+    
+    <script>
+        function getComputerChoice(){
+            let choice;
+            let randomNumber = Math.floor(Math.random()*(3)) + 1;
+            if(randomNumber == 1){
+                choice = 'ROCK';
+            }else if(randomNumber == 2){
+                choice = 'PAPER';
+            }
+            else{
+                choice = 'SCISSORS';
+            }
+            console.log("//// COMPUTER CHOSE " + choice);
+            return choice;
+        }
+
+        function getChoice(){
+            let condition = false;
+            let playerChoice;
+            while(!condition){
+                playerChoice = prompt("What's your choice?").toUpperCase();
+                if(playerChoice == 'ROCK' || playerChoice == 'SCISSORS' || playerChoice == 'PAPER'){
+                    condition = true;
+                }
+            }
+            
+            return playerChoice;
+        }
+        
+
+        function round(persChoice, compChoice){
+            let whoWins; // 0 -> computer, 1 -> person, 2 -> tie
+
+            if(persChoice === compChoice){
+                whoWins = 2;
+            }else if((persChoice === 'ROCK' && compChoice === 'SCISSORS') || (persChoice === 'PAPER' && compChoice === 'ROCK') || (persChoice === 'SCISSORS' && compChoice === 'PAPER')){
+                whoWins = 1;
+            }else{
+                whoWins = 0;
+            }
+            return whoWins;
+        }
+
+
+        function game(){
+            let personWins = 0, computerWins = 0, winner;
+            while(personWins < 5 && computerWins < 5){
+                winner = round(getChoice(), getComputerChoice());
+                if(winner == 0){
+                    computerWins++;
+                    console.log("You lost this round!, the score goes " + personWins + " - " + computerWins);
+                }else if(winner == 1){
+                    personWins++;
+                    console.log("You won this round, congrats! The score goes " + personWins + " - " + computerWins);
+                }
+                else{
+                    console.log("It was a tie!");
+                }
+            }
+            if(personWins == 5){
+                alert("YOU WON!!!!!!");
+            }else{
+                alert("So sad, you lost.");
+            }
+        }
+       game(); 
+    </script>
+
+</body>
+</html>
