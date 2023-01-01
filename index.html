@@ -4,11 +4,56 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
     <title>RockPaperScissors</title>
 </head>
 <body>
-    
+
+    <div id="fullBody">
+        <div id="leftMargin"></div>
+        <div id="content">
+
+            <div id="title">Rock, Paper, Scissors</div>
+            
+            <div id="instructions">Select your play (rock, paper or scissors) and see your computers response.
+                You'll see in the counter below your points and the computer's. Wins the one who gets 5 points first.
+            </div>
+
+            <div class="container">
+                <ul id="counters">
+                    <li id="computerCounter">Computer:</li>
+                    <li id="personCounter">Person:</li>
+                </ul>
+            </div>
+
+            <div id="optionSelector">
+                <div id="indicator"></div>
+                <div id="images">
+                    <img src="./Images/stone.svg" alt="Rock">
+                    <img src="./Images/paper.svg" alt="Paper">
+                    <img id= "scissors" src="./Images/scissors.png" alt="Scissors">
+                </div>
+            </div>
+
+            <div id="results">
+                <div id="computerPick">Computer picked: <span id="computerPick" class="computerSelection"></span></div>
+                <div id="personPick">You picked: <span id="personPick" class="personSelection"></span></div>
+                <div id="winner">Round winner is: <span id="winner" class="roundWinner"></span></div>
+            </div>
+
+            <div id="reset">
+                <button id="resetButton">Reset Game</button>
+            </div>
+
+        </div>
+        <div id="rightMargin"></div>
+    </div>
+
+    <div id="footer">Some funny footer ☺</div>
+
+
     <script>
+        /*
         function getComputerChoice(){
             let choice;
             let randomNumber = Math.floor(Math.random()*(3)) + 1;
@@ -73,7 +118,7 @@
                 alert("So sad, you lost.");
             }
         }
-       game(); 
+       game(); */
     </script>
 
 </body>
