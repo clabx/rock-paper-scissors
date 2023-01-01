@@ -71,10 +71,12 @@ ul {
 }
 
 #indicator {
-    min-width: 973.34px;
-    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    min-width: 300px;
     font-size: 25px;
     min-height: 29.5px;
+    text-align: center;
 }
 
 #images {
