@@ -44,10 +44,13 @@ body{
 #counters {
     display: flex;
     flex-wrap: wrap;
-    max-width: min-content;
     margin-left: 45px;
     padding: 0;
     font-size: 20px;
+}
+
+#counter {
+    min-width: 958.34px;
 }
 
 ul {
@@ -114,6 +117,6 @@ img {
 #footer {
     background-color: rgb(134, 134, 134);
     text-align: center;
-    padding: 27px;
+    padding: 39px;
 }
 

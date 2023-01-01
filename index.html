@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
+    <script src="./javascript.js" defer></script>
     <title>RockPaperScissors</title>
 </head>
 <body>
@@ -21,24 +22,24 @@
 
             <div class="container">
                 <ul id="counters">
-                    <li id="computerCounter">Computer:</li>
-                    <li id="personCounter">Person:</li>
+                    <li id="counter">Computer: <span id="computerCounter"></span></li>
+                    <li id="counter">Person: <span id="personCounter"></span></li>
                 </ul>
             </div>
 
             <div id="optionSelector">
                 <div id="indicator"></div>
                 <div id="images">
-                    <img src="./Images/stone.svg" alt="Rock">
-                    <img src="./Images/paper.svg" alt="Paper">
+                    <img id="rock" src="./Images/stone.svg" alt="Rock">
+                    <img id="paper" src="./Images/paper.svg" alt="Paper">
                     <img id= "scissors" src="./Images/scissors.png" alt="Scissors">
                 </div>
             </div>
 
             <div id="results">
-                <div id="computerPick">Computer picked: <span id="computerPick" class="computerSelection"></span></div>
-                <div id="personPick">You picked: <span id="personPick" class="personSelection"></span></div>
-                <div id="winner">Round winner is: <span id="winner" class="roundWinner"></span></div>
+                <div>Computer picked: <span id="computerPick"></span></div>
+                <div>You picked: <span id="personPick"></span></div>
+                <div>Round winner is: <span id="winner"></span></div>
             </div>
 
             <div id="reset">
@@ -50,76 +51,5 @@
     </div>
 
     <div id="footer">Some funny footer ☺</div>
-
-
-    <script>
-        /*
-        function getComputerChoice(){
-            let choice;
-            let randomNumber = Math.floor(Math.random()*(3)) + 1;
-            if(randomNumber == 1){
-                choice = 'ROCK';
-            }else if(randomNumber == 2){
-                choice = 'PAPER';
-            }
-            else{
-                choice = 'SCISSORS';
-            }
-            console.log("//// COMPUTER CHOSE " + choice);
-            return choice;
-        }
-
-        function getChoice(){
-            let condition = false;
-            let playerChoice;
-            while(!condition){
-                playerChoice = prompt("What's your choice?").toUpperCase();
-                if(playerChoice == 'ROCK' || playerChoice == 'SCISSORS' || playerChoice == 'PAPER'){
-                    condition = true;
-                }
-            }
-            
-            return playerChoice;
-        }
-        
-
-        function round(persChoice, compChoice){
-            let whoWins; // 0 -> computer, 1 -> person, 2 -> tie
-
-            if(persChoice === compChoice){
-                whoWins = 2;
-            }else if((persChoice === 'ROCK' && compChoice === 'SCISSORS') || (persChoice === 'PAPER' && compChoice === 'ROCK') || (persChoice === 'SCISSORS' && compChoice === 'PAPER')){
-                whoWins = 1;
-            }else{
-                whoWins = 0;
-            }
-            return whoWins;
-        }
-
-
-        function game(){
-            let personWins = 0, computerWins = 0, winner;
-            while(personWins < 5 && computerWins < 5){
-                winner = round(getChoice(), getComputerChoice());
-                if(winner == 0){
-                    computerWins++;
-                    console.log("You lost this round!, the score goes " + personWins + " - " + computerWins);
-                }else if(winner == 1){
-                    personWins++;
-                    console.log("You won this round, congrats! The score goes " + personWins + " - " + computerWins);
-                }
-                else{
-                    console.log("It was a tie!");
-                }
-            }
-            if(personWins == 5){
-                alert("YOU WON!!!!!!");
-            }else{
-                alert("So sad, you lost.");
-            }
-        }
-       game(); */
-    </script>
-
 </body>
 </html>
